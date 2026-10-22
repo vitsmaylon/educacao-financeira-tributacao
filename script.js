@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const botaoMenu = document.getElementById("botao-menu");
     const menu = document.getElementById("menu-principal");
+    const botaoTema = document.getElementById("alternar-tema");
 
     // =====================================================
     // MENU MOBILE
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             botaoMenu.setAttribute(
                 "aria-expanded",
-                aberto
+                String(aberto)
             );
 
             botaoMenu.textContent =
@@ -46,13 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // TEMA CLARO / ESCURO
     // =====================================================
 
-    const botaoTema =
-        document.getElementById("alternar-tema");
+    const temaSalvo = localStorage.getItem("tema");
 
-    const temaSalvo =
-        localStorage.getItem("tema");
-
-    if (temaSalvo) {
+    if (temaSalvo === "dark" || temaSalvo === "light") {
 
         document.documentElement.setAttribute(
             "data-theme",
@@ -61,31 +58,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function atualizarIconeTema() {
+    function temaAtual() {
 
-        const temaAtual =
-            document.documentElement.getAttribute(
-                "data-theme"
-            );
+        return document.documentElement.getAttribute("data-theme")
+            === "dark"
+            ? "dark"
+            : "light";
+
+    }
+
+    function atualizarBotaoTema() {
+
+        if (!botaoTema) {
+            return;
+        }
+
+        const escuro = temaAtual() === "dark";
 
         botaoTema.textContent =
-            temaAtual === "dark" ? "☀" : "☾";
+            escuro ? "☀" : "☾";
+
+        botaoTema.setAttribute(
+            "aria-label",
+            escuro
+                ? "Ativar tema claro"
+                : "Ativar tema escuro"
+        );
+
+        botaoTema.setAttribute(
+            "title",
+            escuro
+                ? "Ativar tema claro"
+                : "Ativar tema escuro"
+        );
 
     }
 
     if (botaoTema) {
 
-        atualizarIconeTema();
+        atualizarBotaoTema();
 
         botaoTema.addEventListener("click", () => {
 
-            const temaAtual =
-                document.documentElement.getAttribute(
-                    "data-theme"
-                );
-
             const novoTema =
-                temaAtual === "dark"
+                temaAtual() === "dark"
                     ? "light"
                     : "dark";
 
@@ -99,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 novoTema
             );
 
-            atualizarIconeTema();
+            atualizarBotaoTema();
 
         });
 
