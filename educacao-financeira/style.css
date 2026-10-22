@@ -174,6 +174,183 @@ header {
     outline-offset: 2px;
 }
 
+/* =========================================================
+   IDENTIDADE INSTITUCIONAL DO MUSEU
+   ========================================================= */
+
+.cabecalho-museu {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: var(--header-bg);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid var(--header-line);
+}
+
+
+/* Faixa UFRR */
+
+.barra-institucional {
+    background: #082235;
+    color: #ffffff;
+}
+
+.barra-institucional-conteudo {
+    max-width: var(--content);
+
+    min-height: 34px;
+
+    margin: 0 auto;
+
+    padding:
+        0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    font-size: 0.82rem;
+}
+
+.links-institucionais {
+    display: flex;
+
+    gap: 1.2rem;
+}
+
+.links-institucionais a {
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+.links-institucionais a:hover {
+    text-decoration: underline;
+}
+
+
+/* Identidade do Museu */
+
+.cabecalho-identidade {
+    max-width: var(--content);
+
+    margin: 0 auto;
+
+    min-height: 82px;
+
+    padding:
+        12px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.4rem;
+}
+
+.marca-museu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.85rem;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.logo-museu {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+}
+
+.marca-museu-texto {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.15;
+}
+
+.marca-museu-texto strong {
+    color: var(--ink);
+
+    font-size: 1.15rem;
+}
+
+.marca-museu-texto span {
+    margin-top: 0.25rem;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* Nome da subpágina */
+
+.identificacao-pagina {
+    margin-left: 1rem;
+
+    padding-left: 1.4rem;
+
+    border-left:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+}
+
+.preferencias-site {
+    margin-left: auto;
+}
+
+
+/* Navegação interna */
+
+.navbar {
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        0 24px;
+
+    justify-content: center;
+
+    border-top:
+        1px solid var(--line);
+}
+
+.navbar .menu {
+    max-width: var(--content);
+
+    width: 100%;
+
+    justify-content: center;
+
+    padding:
+        8px 0;
+}
+
 /* Hero */
 .hero {
     min-height: 72vh;
@@ -503,6 +680,44 @@ footer p { margin:0 auto; color:#d7e0e6; }
 
 /* Mobile */
 @media (max-width: 900px) {
+    .cabecalho-identidade {
+    padding:
+        10px 18px;
+}
+
+.identificacao-pagina {
+    display: none;
+}
+
+.marca-museu-texto strong {
+    font-size: 1rem;
+}
+
+.logo-museu {
+    width: 48px;
+    height: 48px;
+}
+
+.navbar {
+    padding:
+        0 12px;
+}
+
+.navbar .menu {
+    flex-direction: row;
+
+    overflow-x: auto;
+
+    justify-content: flex-start;
+}
+
+.links-institucionais {
+    display: none;
+}
+
+.barra-institucional-conteudo {
+    justify-content: center;
+}
     .navbar { align-items:flex-start; flex-direction:column; gap:10px; }
     .preferencias-site { position:absolute; top:14px; right:24px; }
     .menu { width:100%; overflow-x:auto; padding-bottom:2px; }
