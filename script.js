@@ -53,10 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.getItem("tema");
 
     if (temaSalvo) {
+
         document.documentElement.setAttribute(
             "data-theme",
             temaSalvo
         );
+
     }
 
     function atualizarIconeTema() {
@@ -68,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         botaoTema.textContent =
             temaAtual === "dark" ? "☀" : "☾";
+
     }
 
     if (botaoTema) {
@@ -126,11 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-        }
-
-    });
-
-});
         }
 
     });
