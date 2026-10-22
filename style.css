@@ -29,7 +29,7 @@ html {
     --borda: #dce4e9;
 
     --branco: #ffffff;
-
+   
     --sombra:
         0 14px 35px rgba(24, 47, 66, 0.08);
 
@@ -38,6 +38,23 @@ html {
     --largura:
         1180px;
 }
+
+[data-theme="dark"] {
+    --azul-900: #e6eef4;
+    --azul-800: #9ec5dd;
+    --azul-700: #79b3d1;
+
+    --texto: #e3e9ed;
+    --texto-secundario: #aab9c3;
+
+    --fundo: #101820;
+    --fundo-cinza: #17222b;
+
+    --borda: #2b3a45;
+
+    --branco: #17222b;
+}
+
 
 body {
     font-family:
